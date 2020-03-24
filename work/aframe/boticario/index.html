@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <title>Boticário</title>
+    
+    <script src="//cdn.8thwall.com/web/aframe/8frame-0.9.0.min.js"></script>
+    
+    <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+        
+    <script src="//apps.8thwall.com/xrweb?appKey=71N7VIXpSwzJDubr71s9XTgDI1rZhsKsP0B6MkZliJEjG0cGQQhInsJvsklCEJkoKV8dGf"></script>
+
+<script type="text/javascript">
+AFRAME.registerComponent('gallery', {
+  schema: {},
+  init: function () {
+    var image1 = document.querySelector('#index1');
+      image1.addEventListener('click', function(e) {
+        window.open("https://www.ifood.com.br/lista-restaurantes/1/");
+      })
+    var image2 = document.querySelector('#index2');
+      image2.addEventListener('click', function(e) {
+        window.open("https://www.ifood.com.br/lista-restaurantes/2/");
+      })
+    var image3 = document.querySelector('#index3');
+      image3.addEventListener('click', function(e) {
+        window.open("https://www.ifood.com.br/lista-restaurantes/3/");
+      })
+     var image4 = document.querySelector('#index4');
+      image4.addEventListener('click', function(e) {
+        window.open("https://www.ifood.com.br/lista-restaurantes/4/");
+      })
+    var image5 = document.querySelector('#index5');
+      image5.addEventListener('click', function(e) {
+        window.open("https://www.ifood.com.br/lista-restaurantes/5/");
+      })                 
+    //   var images1 = document.querySelectorAll('a-image');
+    //   images1.forEach(function(image) {
+    //   image.addEventListener('click', function(e) {
+
+    //     window.open("https://www.ifood.com.br/lista-restaurantes/1/");
+    //   })
+    // })
+  }
+});
+</script>
+
+</head>
+    
+    <body>
+        <a-scene gallery
+            xrweb="disableWorldTracking: true"
+            xrextras-gesture-detector
+            xrextras-almost-there
+            antialias="true"
+            xrextras-loading
+            xrextras-runtime-error>
+        
+            <a-assets>
+                <img id="iFood1" src="assets/logo-ifood1.png">
+                <img id="iFood2" src="assets/logo-ifood2.png">
+                <img id="iFood3" src="assets/logo-ifood3.png">
+                <img id="iFood4" src="assets/logo-ifood4.png">
+                <img id="iFood5" src="assets/logo-ifood5.png">
+            </a-assets>
+        
+            <a-camera
+                raycaster="objects: .cantap"
+                cursor="fuse: false; rayOrigin: mouse;"
+                wasd-controls-enabled="true"
+            >
+            </a-camera>
+            
+            <a-entity xrextras-named-image-target="name: 02">
+              <a-image id="index1" class="cantap" position="-1 1 0" rotation="0 0 0" scale="1 1 1"
+      width="1" height="0.862" opacity="1" src="#iFood1"
+      roughness="1" visible="true"></a-image>
+              <a-image id="index2" class="cantap" position="0 1 0" rotation="0 0 0" scale="1 1 1"
+      width="1" height="0.862" opacity="1" src="#iFood2"
+      roughness="1" visible="true"></a-image>
+              <a-image id="index3" class="cantap" position="1 1 0" rotation="0 0 0" scale="1 1 1"
+      width="1" height="0.862" opacity="1" src="#iFood3"
+      roughness="1" visible="true"></a-image>
+              <a-image id="index4" class="cantap" position="-1 0.2 0" rotation="0 0 0" scale="1 1 1"
+      width="1" height="0.862" opacity="1" src="#iFood4"
+      roughness="1" visible="true"></a-image>
+              <a-image id="index5" class="cantap" position="1 0.2 0" rotation="0 0 0" scale="1 1 1"
+      width="1" height="0.862" opacity="1" src="#iFood5"
+      roughness="1" visible="true"></a-image>
+             
+            </a-entity>
+        </a-scene>
+
+
+
+
+    </body>
+</html>
+
