@@ -22,10 +22,10 @@ AFRAME.registerComponent('physics-image-target', {
     const name = this.data.name
     const scene = this.el.sceneEl
     const portalPos = this.el
-    const container = document.getElementById('photoModeContainer')
 
-    //Container starts hidden so it isn't visible when the page is still loading
-    container.style.display = 'block'
+    // const container = document.getElementById('photoModeContainer')
+    // //Container starts hidden so it isn't visible when the page is still loading
+    // container.style.display = 'block'
     
     var treeShook = false 
     object3D.visible = false
@@ -71,10 +71,10 @@ AFRAME.registerComponent('gallery', {
       image2.addEventListener('click', function(e) {
         window.open("https://www.ifood.com.br/lista-restaurantes");
       })
-    var image3 = document.querySelector('#index3');
-      image3.addEventListener('click', function(e) {
-        window.open("https://www.ifood.com.br/delivery/descobrir/entrega-gratis/");
-      })
+    // var image3 = document.querySelector('#index3');
+    //   image3.addEventListener('click', function(e) {
+    //     window.open("https://www.ifood.com.br/delivery/descobrir/entrega-gratis/");
+    //   })
      var image4 = document.querySelector('#index4');
       image4.addEventListener('click', function(e) {
         window.open("https://www.ifood.com.br/delivery/descobrir/restaurantes-famosos/");
@@ -88,7 +88,7 @@ AFRAME.registerComponent('gallery', {
   }
 });
 </script>
-<style type="text/css">
+<!-- <style type="text/css">
   #photoModeContainer {
     position: absolute;
     left: 0;
@@ -97,14 +97,12 @@ AFRAME.registerComponent('gallery', {
     right: 0;
     z-index: 10;    
   }
-</style>
+</style> -->
 </head>
     
     <body>
-      <!-- These HTML elements are used to show an UI laid over the scene -->
-    <div id="photoModeContainer" style="display: none">
-      <div id='banner_mobile1' ></div> 
-    </div>
+  <!--   <div id="photoModeContainer" style="display: none;">
+    </div> -->
       
         <a-scene gallery
             xrweb="disableWorldTracking: true"
@@ -120,11 +118,13 @@ AFRAME.registerComponent('gallery', {
             xrextras-runtime-error
             xrweb>
             <a-assets>
-                <img id="iFood1" src="assets/logo-ifood1.png?v1"><div>Clique agora e abra o app</div>
+              
+                <img id="iFood1" src="assets/logo-ifood1.png?v1">
                 <img id="iFood2" src="assets/logo-ifood2.png?v1">
                 <img id="iFood3" src="assets/logo-ifood3.png?v1">
                 <img id="iFood4" src="assets/logo-ifood4.png?v1">
                 <img id="iFood5" src="assets/logo-ifood5.png?v1">
+
 
                 <img id="myCustomImage" src="preload.png">
             </a-assets>
@@ -144,7 +144,7 @@ AFRAME.registerComponent('gallery', {
                   roughness="1" visible="true">
               </a-image>
               <a-image id="index3" class="cantap" position="1.3 1 0" rotation="0 0 0" scale="1 1 1"
-                  width="1.7" height="0.862" opacity="1" src="#iFood3"
+                  width="1.7" height="0.862" opacity="1" src="#banner_mobile1"
                   roughness="1" visible="true">
               </a-image>
               <a-image id="index4" class="cantap" position="0.8 -1.4 0" rotation="0 0 0" scale="1 1 1"
